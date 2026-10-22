@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; background: #f4f5f7; color: #222; }
+a { color: #1565c0; text-decoration: none; }
+header { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; padding: 12px 20px; background: #1565c0; }
+header a, header .hi { color: #fff; }
+header .logo { font-size: 20px; font-weight: bold; }
+header nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+main { max-width: 1100px; margin: 20px auto; padding: 0 14px; }
+button { cursor: pointer; padding: 7px 14px; border: 0; border-radius: 4px; background: #1565c0; color: #fff; }
+button.sec { background: #888; } button.danger { background: #c62828; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+input, select, textarea { padding: 7px; border: 1px solid #bbb; border-radius: 4px; font: inherit; }
+.card, .box { background: #fff; border-radius: 6px; padding: 14px; box-shadow: 0 1px 3px #0002; margin-bottom: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+.grid .card { display: flex; flex-direction: column; gap: 6px; margin: 0; }
+.grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 4px; }
+.price { color: #d32f2f; font-weight: bold; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.toolbar input { flex: 1; min-width: 160px; }
+.err { color: #c62828; margin: 8px 0; } .ok { color: #2e7d32; margin: 8px 0; }
+.form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; }
+.detail { display: flex; flex-wrap: wrap; gap: 20px; }
+.detail img { width: 100%; max-width: 420px; border-radius: 6px; }
+.detail > div { flex: 1; min-width: 260px; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { border-bottom: 1px solid #ddd; padding: 8px; text-align: left; font-size: 14px; vertical-align: top; }
+.table-wrap { overflow-x: auto; }
+.tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.tabs button.active { background: #0d47a1; } .tabs button { background: #90a4ae; }
+.pager { display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 14px; }
+.row-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; margin-bottom: 14px; }
+.stars { color: #f9a825; }
+.badge { padding: 2px 8px; border-radius: 10px; background: #e3f2fd; font-size: 12px; }
