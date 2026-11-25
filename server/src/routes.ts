@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import { z } from 'zod';
 import { q } from './db';
 import { adminOnly, auth, sign, uid } from './auth';
+import { chatReply } from './chatbot';
 
 export const api = Router();
 
@@ -268,4 +269,13 @@ api.delete('/admin/users/:id', auth(), adminOnly, h(async (req, res) => {
   await q('DELETE FROM product_views WHERE user_id=$1', [id]);
   await q('DELETE FROM users WHERE id=$1', [id]);
   res.json({ ok: true });
+}));
+
+// ================= CHATBOT =================
+api.post('/chat', auth(false), h(async (req, res) => {
+  const d = z.object({
+    message: z.string().trim().min(1, 'Vui lòng nhập nội dung tin nhắn').max(1000, 'Tin nhắn quá dài'),
+    history: z.array(z.object({ role: z.string().optional(), text: z.string().optional() })).optional(),
+  }).parse(req.body);
+  res.json(await chatReply(d.message, d.history, uid(req)));
 }));

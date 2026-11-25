@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Orders from './pages/Orders';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import Chatbot from './pages/Chatbot';
 import './styles.css';
 
 function Layout() {
@@ -41,6 +42,7 @@ function Layout() {
           <Route path="/admin" element={user?.role === 'admin' ? <Admin /> : <Navigate to="/" />} />
         </Routes>
       </main>
+      <Chatbot />
     </>
   );
 }
